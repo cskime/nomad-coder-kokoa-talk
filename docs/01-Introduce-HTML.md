@@ -1,4 +1,20 @@
-## Overview
+## Introduce
+
+Website를 만드는 3가지 언어
+
+- HTML : 브라우저에게 어떤 content를 보여줄지 알려줌
+- CSS : 브라우저에게 어떤 HTML content를 어떤 디자인으로 보여줄지 알려줌
+- Javascript : Website가 동적으로 동작하게 만들어 줌 (프로그래밍 언어)
+
+HTML 파일은 브라우저가 이해할 수 있는 명령어(tag)로 이루어진 단순 텍스트 파일이다.
+브라우저가 이해할 수 있는 형태로 HTML 파일을 작성해서 브라우저에게 주면, 브라우저는 명령어들을 이해하고 그에 맞게 content를 보여준다.
+이 때, content들을 CSS에서 정한 디자인으로 바꿔서 보여주기도 하고 Javascript 구현에 맞게 content들을 동적으로 표시하기도 한다.
+
+브라우저는 단순히 content를 화면에 표시하기만 할 뿐, 잘못된 것을 알려주지 않는다.
+HTML tag를 잘못 사용해도 에러를 만들지 않고 단순히 content를 (잘못된 모습으로) 화면에 표시한다.
+Error를 발생시키지 않으니 개발자는 불편하지만, 사용자는 error를 만나지 않아서 더 좋은 경험을 한다는 장점이 있다.
+
+## HTML Overview
 
 HTML(Hyper Text Markup Language)
 
@@ -12,7 +28,7 @@ Tag의 종류는 굉장히 많으므로 다 외우려고 하면 안 된다.
 
 문서는 [MDN HTML element reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)를 참고하면 좋다.
 
-## Structure
+## HTML Structure
 
 HTML 파일의 전체 구조
 
@@ -33,7 +49,7 @@ HTML 파일의 전체 구조
 - `<head></head>` : Website 환경 설정 등 눈에 보이지 않는 content를 정의하는 영역. 탭에 표시되는 website 제목, 구글 검색 시 표시되는 문구 등을 설정할 수 있다.
 - `<body></body>` : Website에 실제로 표시되는 content들을 정의하는 영역. 실제 content들은 모두 여기에 작성해야 한다.
 
-## Tag
+## HTML Tag
 
 브라우저에게 '여기부터 여기까지가 image야/title이야'와 같이 content의 유형을 알려주기 위해 사용하는 것.
 이 때, **tag를 열었으면 항상 같은 tag로 닫아야 한다.**
