@@ -1,0 +1,80 @@
+<!-- 
+    [ index.html ]
+    - 대부분의 웹 서버가 디폴트로 index.html을 찾도록 설정되어 있기 때문
+
+    [ Shortcut ]
+    - ! : HTML form 자동완성
+    - link:css : CSS 파일을 import하는 link element 자동완성
+
+    [ BEM(Block Element Modifier) Convention ]
+    - CSS를 좀 더 쉽게 읽을 수 있도록 만든 규칙
+    - `block__element--modifier` 형식
+    - CSS를 작성할 때 id였는지 class였는지 햇갈리는 경우가 많아서 대부분 class를 사용하기로 함
+    - 이 때 class 이름을 쉽게 구분할 수 있게 한 것
+    - 어떤 class가 어떤 책임을 가지는지, 서로 어떤 관계에 있는지 등을 쉽게 알 수 있다.
+    - btn--big, btn--orange 등 속성들을 클래스로 나눠서 쓰는게 좋다.
+
+    [ Icon ]
+    - 직접 만드는 방법
+    - svg 추출하는 방법
+    - <i></i> : Icon을 추가하는 element
+
+    [ Button ]
+    - <form></form> 아래에 button을 추가할 수 있음
+    - 버튼을 만드는 방법
+        1. <input type="submit" />
+        2. <button>title</button>
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="css/styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to Kokoa Clone</title>
+  </head>
+  <body>
+    <div class="status-bar">
+      <!-- column이란 이름은 너무 general. 이름이 길어지더라도 고유하게 구분할 수 있는 이름을 쓰자 (parent__child 형식 추천) -->
+      <div class="status-bar__column">
+        <span>No Service</span>
+        <i class="fas fa-wifi"></i>
+      </div>
+      <div class="status-bar__column">
+        <span>18:44</span>
+      </div>
+      <div class="status-bar__column">
+        <span>11%</span>
+        <i class="fas fa-battery-full"></i>
+        <i class="fas fa-bolt"></i>
+      </div>
+    </div>
+
+    <!-- 'header'는 엄청 많을 것이므로 "어떤" header인지 분명하게 해 주는게 좋을 것 -->
+    <header class="welcome-header">
+      <!-- welcome-header에 포함되어 있는 title과 text를 나타내기 위한 class naming -->
+      <h1 class="welcome-header__title">Welcome to Kokoa Clone</h1>
+      <p class="welcome-header__text">
+        If you have a Kokoa Account, log in with your email or phone number.
+      </p>
+    </header>
+
+    <!-- form은 많이 사용되지 않을 것 같으니 class 이름을 크게 고려하지 않음 -->
+    <!-- header는 페이지마다 있을 거니까 구분할 필요가 있어서 naming에 신경을 써야 함 -->
+    <form id="login-form">
+      <input type="text" placeholder="Email or phone number" />
+      <input type="password" placeholder="Password" />
+      <input type="submit" value="Log In" />
+
+      <!-- link는 엄청 많을 수 있는데 이거 하나만을 위한 id나 class를 추가하지 않을 것 -->
+      <a href="http://">Find Kokoa Account or Password</a>
+    </form>
+
+    <!-- Script는 항상 body 제일 아래에 위치한다. -->
+    <script
+      src="https://kit.fontawesome.com/88341581a4.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

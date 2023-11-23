@@ -1,0 +1,54 @@
+/* [ Font ]
+    - font-family로 폰트 설정
+    - 나열된 font들을 하나씩 적용해보면서 시도한다.
+    - Google font같은 곳에서 원하는 font를 가져다 써도 된다.
+        - Font 검색
+        - 원하는 style 추가 (여러 가지 style을 제공하는 font가 있음)
+    - Embed하는 두 가지 방법
+        - HTML에서 <head>에 <link>로 추가
+        - CSS에서 @import url();로 추가
+    - 모든 font를 추가하면 폰트를 불러오는 작업 때문에 웹사이트 로딩이 느려진다.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&display=swap');
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.status-bar {
+    display: flex;
+
+    /*  Container 하나를 다른 요소에 상관 없이 center로 정렬하는 방법 
+        - CSS hack. 이상한데 동작하는거;;
+        - space-between은 'No Service' 너비가 길어서 시계가 중앙에 오지 않음
+
+        그래도 분석해보자
+        1. 모든 div를 가운데에 배치한다.
+        2. 각 div가 같은 크기를 갖게 한다.
+            - 여기선 3개니까 3으로 나눠서 33%
+            - 첫 번째 div 위치는 잘 갔고, 2, 3번째 div를 고쳐야 함
+        3. 두 번째 div가 span을 가운데 배치하게 만든다.
+        4. 세 번째 div가 span을 끝에 위치하게 만든다.
+        => 모두 같은 너비를 갖게 한 다음에 각 container에서 위치를 조정한 방법이다.
+    */
+    justify-content: center;
+}
+.status-bar__column {
+    width: 33%;
+}
+.status-bar__column:nth-child(2) {
+    display: flex;
+    justify-content: center;
+}
+.status-bar__column:last-child {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.status-bar__column:first-child span {
+    margin-right: 5px;
+}
+.status-bar__column .fa-battery-full {
+    margin: 0px 5px;
+}
