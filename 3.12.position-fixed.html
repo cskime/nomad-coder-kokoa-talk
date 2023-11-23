@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        height: 1000vh;
+        margin: 20px;
+      }
+      div {
+        width: 300px;
+        height: 300px;
+        color: white;
+        background-color: teal;
+      }
+      #different {
+        background-color: wheat;
+        width: 350px;
+
+        /*  [ Fixed Position ]
+            - Position : element의 위치를 조금씩 옮기고 싶을 때 사용
+            - Fixed : 해당 element를 최초 위치에 고정시키고 다른 layer 위에 그림
+            - 화면을 스크롤해도 최초에 결정된 위치에 고정된다.
+
+            [ top, right, bottom, left 설정 시 변화 ]
+            - fixed position으로 설정된 element는 다른 element들과 다른 layer에 위치함
+            - top, right, bottom, left 등의 속성을 설정하면 다른 element를 덮어쓰면서(cover) 위치를 변경함
+            - 즉, fixed position이 z-index가 더 큰 layer에 그려지므로 다른 element들의 속성을 무시하게 됨 (e.g. block, margin 등)
+        */
+        /* position: fixed;
+        top: 5px;
+        bottom: 5px;
+        left: 200px; */
+      }
+      #green {
+        /*  [ green은 top, right, bottom, left를 설정하지 않았는데도 different를 덮는 이유 ]
+            - different div를 fixed position으로 변경했을 때에도 다른 layer에 위치했음
+            - 단, 고정된 위치가 green의 아래쪽이었으므로 top을 따로 주지 않으면 green을 덮어쓰지 않는 것처럼 보임
+            - green은 초기 위치가 제일 상단이므로, 다른 layer에 있는 different div가 아래에 깔림
+            - 즉, **top, right, bottom, left와 상관 없이 **fixed position**으로 설정하면 다른 layer에 그려진다.**
+        */
+        position: fixed;
+        background-color: teal;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="green"></div>
+    <div id="different"></div>
+  </body>
+</html>

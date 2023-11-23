@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <style>
+      body {
+        height: 1000vh;
+        margin: 50px;
+      }
+      div {
+        width: 150px;
+        height: 150px;
+        background-color: wheat;
+        position: relative;
+      }
+      span {
+        background-color: tomato;
+      }
+
+      /*    [ Pseudo selector ]
+            - Element를 더 구체적으로 pointing하는 방법
+                - span 다음에 오는 class만 선택
+                - 처음이나 마지막에 있는 class만 선택
+            - 기존 방법
+                1. Use tag name
+                2. id with `#`
+                3. class with `.`
+            - Pseudo selector는 id나 class를 사용하는 것 보다 더 좋은 방법이다.
+                - HTML 코드를 수정하지 않아도 됨
+                - CSS만 사용해서 특정 element를 선택할 수 있음
+
+            [ 종류 ]
+            1. last-child : Element들 중에 가장 마지막에 있는 element 선택
+            2. first-child : Element들 중에 가장 첫번째에 있는 element 선택
+            3. nth-child(n) : 전체 element에서 특정 index의 element 선택
+                - n : 해당 index에 있는 element 1개 선택
+                - even/odd : Element들 중 짝수/홀수 번째 index에 있는 element들 선택
+                - f(n) : '5n + 1'과 같은 수식의 결과값에 해당하는 index의 element들 선택
+        */
+
+      /* [ first-child ]
+         - 'div들 중'이 아닌 '전체 element들 중'에서 마지막인 것에 주의
+         - div 다음 다른 element가 있다면 동작하지 않음
+        */
+      /* div:first-child {
+        background-color: tomato;
+      } */
+
+      /* [ last-child ]
+         - 'div들 중'이 아닌 '전체 element들 중'에서 마지막인 것에 주의
+         - div 이전에 다른 element가 있다면 동작하지 않음
+        */
+      /* div:last-child {
+        background-color: teal;
+      } */
+
+      span:nth-child(even) {
+        background-color: teal;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div> -->
+
+    <span>hello</span>
+    <span>hello</span>
+    <span>hello</span>
+    <span>hello</span>
+    <span>hello</span>
+    <span>hello</span>
+    <span>hello</span>
+    <span>hello</span>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        margin: 20px;
+        height: 100vh; /* vh : viewport height. screen 크기를 비율로 설정하는 단위 (화면 크기에 따라 동적으로 적응) */
+
+        /*  [ Flex box ]
+            - inline-block의 문제점을 해결하기 위해 나온 방버
+            - Box들을 원하는 곳에 '유연하게' 배치하기 쉽다.
+            - Flexible layout system에서 element들을 배치하기 위한 계산을 해 준다.
+          
+            [ Key Concept ]
+            1. Child element가 아닌 parent element에만 flexbox를 선언해야 한다.
+                - Element들을 flexible하게 배치하고 싶다면, parent element를 flexbox로 만들어야 함
+                - Parent element가 child element들의 layout을 제어함
+                - Parent-child 관계 element들이 중첩된 경우, **내가 flexible하게 배치하고 싶은 element가 포함된 parent element**를 flexbox로 만들면 된다.
+                - body > div > span 3개 layer일 때, body와 div 모두 flexbox가 될 수 있고 각각의 바로 아래 element들의 layout을 제어한다.
+            2. 주축(main axis)과 교차축(cross-axis)
+                - default : main axis는 horizontal, cross axis는 vertical
+                - `flex-direction` 기본값이 `row`이기 때문에 main axis 기본값이 horizontal
+                - axis별 방향은 변경할 수 있다. (`flex-direction`)
+                - **main axis가 수평(horizontal) 방향으로 배치한다고 생각하면 안됨**
+
+            [ 사용 방법 ]
+            - `display` 속성에 `flex` 설정
+            - justify-content : main axis에 적용되는 alignment
+                - center, flex-start(default), flex-end
+                - space-evenly, space-round, space-between
+            - align-items : cross axis에 적용되는 alignment
+                - center, flex-start(default), flex-end
+                - stretch -> 고정된 width, height가 있으면 동작하지 않음
+            - flex-direction : axis 방향 변경
+                - row(default) : main axis가 horizontal
+                - column : main axis가 vertical
+                - row-reverse : main axis가 horizontal이고 'Right -> Left' 순서로 배치
+                - column-reverse : main axis가 vertical이고 'Bottom -> Top' 순서로 배치
+            - flex-wrap
+                - nowrap : box 크기가 초기값이 있더라도 flexible system이 계산한 값을 덮어씌운다. (e.g. 화면 크기가 줄어들면 element가 작아짐)
+                - wrap : 초기값을 고정시킴. 화면 크기가 element들이 차지하는 크기보다 작아지면 element 크기를 변경하지 않고 아래 줄로 보낸다.
+                - wrap-reverse : Wrap과 같은 원리지만 '위쪽'으로 보낸다.
+        */
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap-reverse;
+      }
+      div {
+        width: 300px;
+        height: 300px;
+        background-color: teal;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 28px;
+        color: white;
+      }
+
+      #second {
+        background-color: wheat;
+      }
+    </style>
+  </head>
+  <body>
+    <div>1</div>
+    <div id="second">2</div>
+    <div>3</div>
+  </body>
+</html>

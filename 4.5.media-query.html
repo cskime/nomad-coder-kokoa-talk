@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+      }
+      div {
+        background-color: teal;
+        width: 200px;
+        height: 200px;
+      }
+      span {
+        font-size: 36px;
+      }
+
+      /*  [ Media Query ]
+            - Condition을 추가할 수 있는 방법
+            - Media query를 사용해서 screen size, orientation 등을 알 수 있다.
+            - Condition이 true일 때 CSS 코드를 작성하여 element 속성을 변경할 수 있다.
+            - Screen size에 따라 반응형으로 만들 수 있다.
+            - 순서 상관 없이 condition을 만족하는 media query가 적용됨
+
+          [ 선언 방법 ]
+          1. @media
+          2. type
+            - screen : Screen 관련 condition 사용 (e.g. width, height, orientation 등)
+            - print : 화면 프린트할 때 다른 CSS를 적용하기 위해 사용 (e.g. 잉크 사용을 줄이기 위해 색을 없애는 등)
+          3. condition
+            - 각 condition들은 `and`로 chaining 한다.
+            - min-width : screen의 최소 너비
+            - max-width : screen의 최대 너비
+            - orientation : landscape(가로), portrait(세로) 감지
+            - min-device-width / max-device-width : phone에서만 적용되는 condition
+            - aspect-ratio : retina display screen 감지 (iOS, macOS)
+          4. CSS 코드 작성 -> CSS는 위에서부터 순서대로 적용되므로, media 조건을 만족시키면 속성값을 덮어쓸 것
+      */
+      @media screen and (min-width: 601px) and (max-width: 1200px) and (orientation: landscape) {
+        div {
+          background-color: wheat;
+        }
+      }
+      @media screen and (orientation: landscape) {
+        span {
+          display: none;
+        }
+      }
+      @media print {
+        body {
+          background-color: tomato;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <span>Pleas flip your phone :(</span>
+  </body>
+</html>

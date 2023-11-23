@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      img {
+        border: 5px solid black;
+        border-radius: 50%; /* make circle */
+
+        /*  [ Combine transformation and Transition ]
+            - transformation : translate, scale, rotate 변경
+            - transition : animation 적용
+        */
+        transition: transform 2s ease-in-out;
+      }
+      img:hover {
+        /*  [ Transformation ]
+            - 다른 element의 box를 변형시키지 않고 원하는 element의 위치 및 크기를 변경하는 것
+            - Element의 크기나 위치를 변경해도 다른 element를 덮어버림
+            - 반대로, element는 다른 element의 transformation을 인식하지 못함
+            - Transformation은 pixel 단위의 변경이므로 box에 영향을 주지 않음
+
+            [ Property value ]
+            - rotateX/Y/Z(Ndeg) : X/Y/Z 축을 중심으로 X degree만큼 회전
+            - scaleX/Y/Z(n) : X/Y/Z 축으로 n배 scaling
+            - scale(x, y) : x, y축 방향으로 각각 x배, y배
+            - translateX/Y/Z(Npx) : X/Y/Z 축으로 Npx만큼 이동
+        */
+        /* transform: rotateZ(10deg); */
+        /* transform: translateX(300px); */
+        /* transform: skewX(45deg); */
+        transform: rotateY(360deg) scale(0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <img src="img/logo.jpeg" />
+    <span>hahahahahahahahaha</span>
+  </body>
+</html>

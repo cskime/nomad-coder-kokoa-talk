@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        height: 1000vh;
+        margin: 50px;
+      }
+      div {
+        width: 300px;
+        height: 300px;
+        background-color: tomato;
+
+        /*  [ static position ]
+            - position의 기본값
+            - Layout이 해당 element box를 처음 위치하는 곳에 두는 것
+            - top, right, bottom, left가 동작하지 않음
+        */
+        position: static;
+      }
+      .beige {
+        width: 200px;
+        height: 200px;
+        background-color: wheat;
+
+        /*  [ relative position ]
+            - 최초 위치를 기준으로 위치를 수정하는 것
+            - top, right, bottom, left 값 만큼 이동
+            - top과 bottom 또는 left와 right은 동시에 적용되지 않음
+        */
+        position: relative;
+        top: -10px;
+        left: -10px;
+      }
+      .green {
+        background-color: teal;
+        height: 100px;
+        width: 100px;
+
+        /*  [ absolute position ]
+            - 가장 가까운 relative position parent를 기준으로 위치를 수정하는 것
+            - relative position parent가 없다면 body 기준
+            - green div의 부모인 beige div가 relative이므로, 
+            - green div가 absolute일 때 beige div를 기준으로 layout 계산
+        */
+        position: absolute;
+        bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="beige">
+        <div class="green"></div>
+      </div>
+    </div>
+  </body>
+</html>

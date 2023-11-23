@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <style>
+      /*  [ Custom properties(Variables) ]
+            - CSS에서 프로그래밍 언어의 변수처럼 사용할 수 있는 것
+            - CSS에서 반복되는 값을 재사용할 수 있다.
+
+          [ 사용 방법 ]
+          1. 선언 : '--variable-name: value;'
+            - dash(`-`) 두 개로 시작
+            - 공백은 dash로 처리
+          2. 사용 : `var(--variable-name);`
+        */
+      /* root : 모든 document의 뿌리가 되는 element */
+      :root {
+        --main-color: #fcce00;
+        --default-border: 1px solid var(--main-color);
+      }
+
+      body {
+        height: 1000vh;
+        margin: 50px;
+      }
+
+      /*  [ Colors ]
+            - Hexa decimal : #rrggbb
+            - RGBA : rgba(r, g, b, a) -> a : transparency
+        */
+      p {
+        /* background-color: rgba(252, 206, 0, 1); */
+        background-color: var(--main-color);
+      }
+      a {
+        color: var(--main-color);
+        border: var(--default-border);
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores
+      doloribus necessitatibus dolorum assumenda deleniti ad blanditiis.
+      Voluptatem dolores deleniti ab nisi, minus amet! Architecto cupiditate
+      dolore magnam laborum explicabo quos.
+    </p>
+    <div>
+      <a href="#">website</a>
+    </div>
+  </body>
+</html>

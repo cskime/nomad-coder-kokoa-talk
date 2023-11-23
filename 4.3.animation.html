@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      /*  [ Animation ]
+            - Transition은 animation을 사용하지만, animation은 아님
+            - hover, active 등 state가 변경될 때에만 animation이 재생됨
+
+            [ Animation 정의 ]
+            1. @keyframes {ANIMATION_NAME}
+            2. 시작과 끝을 정의하는 방법
+                - from block : animation을 시작할 속성
+                - to block : animation이 종료될 때 속성
+                - 다시 원래 자리로 되돌아오게 만들 수 없음
+            3. Animation 진행 시점별로 정의하는 방법
+                - 0% block : animation이 시작할 때
+                - 100% block : animation이 끝날 때
+                - n% block : 전체 animation이 n% 진행된 시점
+                - 원하는 만큼 많은 block을 만들 수 있음
+                - 100% block에서 초기값으로 돌아가면 다시 되돌아가는(rewind) animation 구현 가능
+            
+        */
+      @keyframes superSexyCoinFlip {
+        /* from {
+          transform: rotateY(0);
+        }
+        to {
+          transform: rotateY(180deg) translateX(100px);
+        } */
+
+        0% {
+          transform: rotateY(0);
+        }
+        25% {
+          transform: scale(2);
+        }
+        50% {
+          transform: rotateY(180deg) translateY(100px);
+          border-radius: 0px;
+          border-color: tomato;
+          opacity: 0;
+        }
+        75% {
+          transform: scale(5);
+        }
+        100% {
+          transform: rotateY(0);
+        }
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      img {
+        border: 5px solid black;
+        border-radius: 50%; /* make circle */
+
+        /*  [ Animation 적용 ]
+            1. @keyframes로 정의한 animation 이름
+            2. Animation 재생 시간
+            3. Animation function
+            4. (optional) infinite : n초 동안 재생되는 animation을 무한 반복
+        */
+        animation: superSexyCoinFlip 3s ease-in-out infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="img/logo.jpeg" />
+    <span>hahahahahahahahaha</span>
+  </body>
+</html>

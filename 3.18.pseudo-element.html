@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <style>
+      body {
+        height: 1000vh;
+        margin: 50px;
+      }
+
+      /*  [ Pesudo element ]
+          - Element로 존재하지 않는 요소의 style을 변경해 줌 (e.g. placeholder)
+          - Colon(`:`) 두 개로 사용
+        
+          [ 사용법 ]
+          element-name::value {
+            definition;
+          }
+
+          [ 종류 ]
+          - ::placeholder : Input의 placeholder 선택
+          - ::selection : Text를 드래그할 때 생기는 box 선택
+          - ::first-letter : 첫 번째 character 선택
+          - ::first-line : 첫 번째 line 선택
+      */
+      input::placeholder {
+        color: yellowgreen;
+      }
+
+      p::selection {
+        background-color: yellowgreen;
+        color: white;
+        padding: 20px; /* selection에서는 padding은 적용되지 않음 */
+      }
+
+      p::first-letter {
+        background-color: yellowgreen;
+        color: white;
+        font-size: 50px;
+      }
+
+      p::first-line {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <form action="">
+        <input type="text" placeholder="name" />
+      </form>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id ipsa eius
+        recusandae eum veniam adipisci sunt et asperiores? Consequatur ex ipsam
+        nemo iusto sit nesciunt eaque numquam a reprehenderit fugit!
+      </p>
+    </div>
+  </body>
+</html>

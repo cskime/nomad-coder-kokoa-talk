@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <style>
+      body {
+        height: 1000vh;
+        margin: 50px;
+      }
+
+      /*  [ States ]
+            - active : 마우스로 클릭하고 있는 상태
+            - hover : 마우스가 위에 있는 상태 (not clicking)
+            - focus : Tab을 사용해서 키보드로 선택한 상태 or 키보드 입력이 활성화된 상태 (e.g. input)
+            - visited : 링크에만 적용. 해당 링크에 방문한 기록이 있다면 true (브라우저가 아는 것)
+            - focus-within : focus 상태인 child를 가진 parent의 상태. (parent element에 적용)
+          
+          [ State로 element 선택하기 ]
+          1. 특정 state인 element 선택
+            element-name:state {
+              definition;
+            }
+          2. 다른 element 및 state와 연계
+            element-a:state-a element-b:state-b {
+              definition;
+            }
+            - element-a가 state-a일 때, state-b인 element-b 선택
+            - state-b가 없다면 모든 element-b 선택
+        */
+      a:visited {
+        color: tomato;
+      }
+      a:hover {
+        color: teal;
+      }
+      a:focus {
+        color: turquoise;
+      }
+
+      form {
+        border: 1px solid salmon;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+      }
+      form:focus-within {
+        border-color: seagreen;
+      }
+      form:hover input:focus {
+        background-color: sienna;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <a href="https://apple.com">Go to apple</a>
+
+      <form action="">
+        <input type="text" />
+        <input type="text" />
+        <input type="text" />
+      </form>
+    </div>
+  </body>
+</html>

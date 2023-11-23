@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      a {
+        color: wheat;
+        background-color: tomato;
+        text-decoration: none;
+        padding: 3px 5px;
+        border-radius: 5px;
+        font-size: 55px;
+
+        /*  [ Transition ]
+            - 상태 A에서 상태 B로 가는 변화를 애니메이션화
+            - State가 없는 element에서 정의한 뒤, 변경된 state에 대한 element의 property 감지
+
+            [ Property value ]
+            여러 가지 transition을 적용할 땐 콤마(,)로 구분한다.
+            1. prperty : 어떤 property를 변경시킬 것인지 (all : 모든 property)
+            2. duration : 얼마 동안 변화시킬 것인지
+            3. function : 어떤 함수를 사용할 것인가
+
+            [ 작동 순서 ]
+            1. state 변경: normal -> hover
+            2. transition이 hover에서 background-color와 color property를 찾음
+            3. 변경된 state에서 해당 property 값이 변경되었다면, 그 변화를 애니메이션으로 계산
+
+            [ 실수 주의 ]
+            - transition은 시작되는 곳에 작성해야 함
+              - animation 실행 중 state가 변경되면 원래 상태로 되돌아가야 함
+              - 이 때, 되돌아가는 것도 animation을 만들어주려면 초기값이 필요
+              - transition을 state selector 쪽에 쓰면, 해당 state가 끝났을 때 되돌아가는 애니메이션이 없음
+            - transition을 state selector에서 사용하지 않았는지 확인
+
+            [ Animation function ]
+            - Easing function에 따라 animation 속도 조절
+            - linear, ease-in, ease-out, ease-in-out, ease
+            - cubic-bezier : custom animation을 만들 수 있는 property
+        */
+        /* transition: background-color 10s ease-in-out, color 5s ease-in-out; */
+        /* transition: all 5s ease-in-out; */
+        /* transition: font-size 5s ease-in-out; */
+        transition: all 1s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+      }
+      a:hover {
+        color: tomato;
+        background-color: wheat;
+        font-size: 30px;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#">Go home</a>
+  </body>
+</html>
