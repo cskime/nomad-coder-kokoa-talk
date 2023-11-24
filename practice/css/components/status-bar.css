@@ -1,0 +1,52 @@
+.status-bar {
+  display: flex;
+  padding: 5px 3px;
+
+  /*  Container 하나를 다른 요소에 상관 없이 center로 정렬하는 방법 
+        - CSS hack. 이상한데ㅣ동작하는거;;
+        - space-between은 'No Service' 너비가 길어서 시계가 중앙에 오지 않음
+
+        그래도 분석해보자
+        1. 모든 div를 가운데에 배치한다.
+        2. 각 div가 같은 크기를 갖게 한다.
+            - 여기선 3개니까 3으로 나눠서 33%
+            - 첫 번째 div 위치는 잘 갔고, 2, 3번째 div를 고쳐야 함
+        3. 두 번째 div가 span을 가운데 배치하게 만든다.
+        4. 세 번째 div가 span을 끝에 위치하게 만든다.
+        => 모두 같은 너비를 갖게 한 다음에 각 container에서 위치를 조정한 방법이다.
+    */
+  justify-content: center;
+
+  /* [ navigation bar처럼 status bar도 상단에 고정되게 하기 ]
+     1. position: fixed; width: 100%;
+        - fixed position을 갖게 하고 width를 고정시키면 스크롤해도 상단에 고정된다.
+        - status bar 아래에 있는 다른 box들이 겹치는 문제가 있다.
+        - padding-top을 줘서 해결할 수도 있지만 별로 좋지 않아보임
+     2. position: sticky;
+        - box가 갖는 border 및 padding이 화면에 잘리지 않게 스크롤하면 따라다니게 만듦
+        - status-bar는 상단에 딱 붙어있는 box이므로, 스크롤하면 계속 위에 붙어있게 된다.
+        - fixed position과 달리 다른 layer로 이동하지 않으므로 다른 box와 겹치지 않는다.
+  */
+  /* position: fixed;
+  width: 100%; */
+
+  position: sticky;
+}
+.status-bar__column {
+  width: 33%;
+}
+.status-bar__column:nth-child(2) {
+  display: flex;
+  justify-content: center;
+}
+.status-bar__column:last-child {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.status-bar__column:first-child span {
+  margin-right: 5px;
+}
+.status-bar__column .fa-battery-full {
+  margin: 0px 5px;
+}

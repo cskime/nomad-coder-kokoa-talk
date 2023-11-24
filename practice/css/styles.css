@@ -8,47 +8,45 @@
         - HTML에서 <head>에 <link>로 추가
         - CSS에서 @import url();로 추가
     - 모든 font를 추가하면 폰트를 불러오는 작업 때문에 웹사이트 로딩이 느려진다.
+
+    [ Reset CSS ]
+    - 브라우저에 의해 적용되는 스타일을 모두 제거한다.
+        - 모든 margin, padding, border를 0으로 설정
+        - h1 등 element에 입혀지는 기본 스타일도 모두 초기화
+    - Reset CSS 코드를 복사해서 reset.css 파일 생성 후 main css에 import
+    - HTML에 추가할 수도 있지만, HTML에 css link 코드를 여러 줄 추가하고 싶지 않음
+    - 브라우저 스타일을 없애고 직접 스타일을 지정하는게 더 좋다.
+
+    [ 파일 분리하기 ]
+    - 여러 화면에서 공통으로 사용된다면 component로 분리
+    - 한 화면에서만 사용되고 재사용되지 않는다면 screen으로 분리
+    - styles.css를 root file로 사용하고, 다른 css file들은 styles.css에만 import
+    - 그러면 HTML에서 css 파일 하나만 link로 추가해도 모든 css를 적용할 수 있음
+    - 용도에 따라 css 파일을 분리해서 유지보수를 쉽게 한다.
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&display=swap');
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&display=swap");
 
+/* Settings */
+/* variables.css같은 파일은 모든 CSS에서 사용할 것이므로 위쪽에 정의해 둬야 한다. */
+@import "reset.css"; /* 브라우저 스타일 초기화 */
+@import "variables.css"; /* Variable만 모아두는 css를 따로 만듦 */
+
+/* Components */
+@import "components/status-bar.css";
+@import "components/nav-bar.css";
+@import "components/screen-header.css";
+@import "components/user-component.css";
+
+/* Screens */
+@import "screens/login.css";
+@import "screens/friends.css";
+
+/* styles.css에는 모든 곳에 적용되는 것들을 넣기 때문에 이건 남아있다.
+   편한 방법을 사용해도 상관 없음
+ */
 body {
-    font-family: 'Open Sans', sans-serif;
-}
-
-.status-bar {
-    display: flex;
-
-    /*  Container 하나를 다른 요소에 상관 없이 center로 정렬하는 방법 
-        - CSS hack. 이상한데 동작하는거;;
-        - space-between은 'No Service' 너비가 길어서 시계가 중앙에 오지 않음
-
-        그래도 분석해보자
-        1. 모든 div를 가운데에 배치한다.
-        2. 각 div가 같은 크기를 갖게 한다.
-            - 여기선 3개니까 3으로 나눠서 33%
-            - 첫 번째 div 위치는 잘 갔고, 2, 3번째 div를 고쳐야 함
-        3. 두 번째 div가 span을 가운데 배치하게 만든다.
-        4. 세 번째 div가 span을 끝에 위치하게 만든다.
-        => 모두 같은 너비를 갖게 한 다음에 각 container에서 위치를 조정한 방법이다.
-    */
-    justify-content: center;
-}
-.status-bar__column {
-    width: 33%;
-}
-.status-bar__column:nth-child(2) {
-    display: flex;
-    justify-content: center;
-}
-.status-bar__column:last-child {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-.status-bar__column:first-child span {
-    margin-right: 5px;
-}
-.status-bar__column .fa-battery-full {
-    margin: 0px 5px;
+  font-family: "Open Sans", sans-serif;
+  color: #2e363e; /* 기본 색상을 완전 black에서 변경 */
 }

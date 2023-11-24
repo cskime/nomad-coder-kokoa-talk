@@ -1,0 +1,53 @@
+.user-component {
+  justify-content: space-between;
+}
+
+.user-component,
+.user-component__column:first-child {
+  display: flex;
+  align-items: center;
+}
+
+.user-component__column:last-child {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* [ class로 옵션 주기 ]
+   - class에 size를 주는 등
+   - 두 개 이상 class를 갖고, class를 추가하면 새로운 옵션이 적용되듯 만들기
+   - CSS는 cascading이므로 순서대로 작성하면서 옵션에 따라 값을 덮어쓰면 된다.
+ */
+.user-component__avatar {
+  /* 최초 normal size로 */
+  width: 70px;
+  height: 70px;
+  border-radius: 30px;
+  margin-right: 20px;
+}
+.user-component__avatar--xl {
+  /* class="user-component__avatar user-component__avatar--xl" 
+     이렇게 작성했다면, width와 height만 80px로 덮어써지고
+     border, margin은 첫 번째 class에 설정된 property가 적용될 것
+  */
+  width: 80px;
+  height: 80px;
+}
+.user-component__avatar--sm {
+  width: 60px;
+  height: 60px;
+  border-radius: 25px;
+}
+
+.user-component__title {
+  font-weight: 600;
+  font-size: 22px;
+}
+.user-component__title--not-bold {
+  font-weight: 400;
+}
+
+.user-component__subtitle {
+  margin-top: 8px;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 17px;
+}

@@ -1,0 +1,76 @@
+.nav {
+  background-color: #f9f9fa;
+  padding: 20px 50px;
+  border-top: 1px solid rgba(121, 121, 121, 0.3);
+
+  /* Navigation bar가 하단에 붙어있게 */
+  position: fixed;
+  bottom: 0px;
+
+  /* position을 fixed로 바꾸면 width 정보가 없어지므로 parent에 대해 동일한 크기를 갖도록 고정 */
+  width: 100%;
+
+  /* width 100% 설정 후 nav box가 일부 잘려서 보이는 문제
+
+    [ CSS의 기본 동작 ]
+    1. width를 200px로 설정 -> box width를 200px로 만듦
+    2. padding-left를 50px로 설정
+    3. 이 때, padding을 준 공간은 사용할 수 없으므로 content width는 150px가 되버림
+    4. CSS는 width를 200px로 만들기 위해 padding만큼 content 영역 width를 넓힘
+    5. 결과적으로 250px의 width를 가지게 됨 -> width 200px과 padding 50px을 모두 가지려고 함
+
+    즉, width를 parent의 100%로 설정했지만 좌/우 padding이 총 100px 있으므로
+    content width가 100px만큼 늘어나서 화면 밖으로 나가버렸다.
+
+    [ box-sizing ]
+    - box의 최종 width/height를 계산하는 방법 설정
+    - content-box(default) : Default CSS behavior -> 위의 문제 발생
+    - border-box : border and padding이 box size에 포함되도록 함
+        - padding을 넣어도 box size를 변경하지 말라고 CSS에게 알려준다.
+        - 즉, padding을 넣어도 box size를 그대로 유지하고 싶을 때 사용
+  */
+  box-sizing: border-box;
+}
+
+.nav__list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav__link {
+  /* color: #2e363e; */ /* body에서 설정할 것 */
+
+  /* nav__notification에서 absolute position을 사용하기 위해 relative로 변경 */
+  position: relative;
+}
+
+.nav__notification {
+  background-color: tomato;
+  width: 30px;
+  height: 30px;
+
+  /* nav__notification은 span(inline)이므로 block으로 바꿔줘야 size를 변경할 수 있다. 
+     하지만, 여기선 가운데로 정렬시켜야 하므로 flex로 설정
+  */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 600;
+  border-radius: 50%;
+
+  /* absolute position을 사용해서 다른 layer로 분리해서 중첩시키고 위치 수정 */
+  position: absolute;
+  left: 15px;
+  bottom: 15px;
+}
+
+.nav__alert {
+  background-color: tomato;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  position: absolute;
+  left: 30px;
+  top: -10px;
+}

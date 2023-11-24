@@ -62,10 +62,26 @@
 
     <!-- form은 많이 사용되지 않을 것 같으니 class 이름을 크게 고려하지 않음 -->
     <!-- header는 페이지마다 있을 거니까 구분할 필요가 있어서 naming에 신경을 써야 함 -->
-    <form id="login-form">
-      <input type="text" placeholder="Email or phone number" />
-      <input type="password" placeholder="Password" />
-      <input type="submit" value="Log In" />
+    <!-- 
+         [ Form attribute 두 가지 ]
+         1. action : Data를 보낼 page 지정
+         2. method
+            - POST : Network request
+              - Data를 request body에 데이터를 담아 보내는 방식
+              - Backend server에 데이터를 전송할 때 사용하게 됨
+            - GET
+              - Data를 URL에 담아서 보내는 방식
+              - URL을 가진 누구나 data를 볼 수 있으므로 보안에 취약
+              - **username, password 같은 민감한 정보를 넣으면 안된다.**
+         
+         아래와 같이 보낼 때 이동한 페이지의 URL
+         file:///Users/ckim/Developer/Nomad/nomad-coder-kokoa-talk/practice/friends.html?username=&password=&submit=Log+In
+         - 
+     -->
+    <form id="login-form" action="friends.html" method="get">
+      <input name="username" type="text" placeholder="Email or phone number" />
+      <input name="password" type="password" placeholder="Password" />
+      <input name="submit" type="submit" value="Log In" />
 
       <!-- link는 엄청 많을 수 있는데 이거 하나만을 위한 id나 class를 추가하지 않을 것 -->
       <a href="http://">Find Kokoa Account or Password</a>
