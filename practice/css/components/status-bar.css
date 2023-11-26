@@ -31,6 +31,7 @@
   width: 100%; */
 
   position: sticky;
+  top: 0px; /* top을 0px로 고정해야 예외 케이스가 없다. */
 }
 .status-bar__column {
   width: 33%;

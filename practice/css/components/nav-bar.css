@@ -45,19 +45,19 @@
 }
 
 .nav__notification {
-  background-color: tomato;
-  width: 30px;
-  height: 30px;
-
   /* nav__notification은 span(inline)이므로 block으로 바꿔줘야 size를 변경할 수 있다. 
      하지만, 여기선 가운데로 정렬시켜야 하므로 flex로 설정
   */
+  /* user-component에서도 동일한 모양의 component가 사용되므로 `badge`로 추출 */
+  /* background-color: tomato;
+  width: 30px;
+  height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
   font-weight: 600;
-  border-radius: 50%;
+  border-radius: 50%; */
 
   /* absolute position을 사용해서 다른 layer로 분리해서 중첩시키고 위치 수정 */
   position: absolute;
@@ -66,10 +66,11 @@
 }
 
 .nav__alert {
-  background-color: tomato;
+  /* 다른 곳에서 같은 모양의 alert dot이 사용되므로 `alert`으로 추출 */
+  /* background-color: tomato;
   width: 5px;
   height: 5px;
-  border-radius: 50%;
+  border-radius: 50%; */
   position: absolute;
   left: 30px;
   top: -10px;

@@ -38,10 +38,18 @@
 @import "components/nav-bar.css";
 @import "components/screen-header.css";
 @import "components/user-component.css";
+@import "components/badge.css";
+@import "components/alert.css";
+@import "components/icon-row.css";
+@import "components/alt-screen-header.css";
 
 /* Screens */
 @import "screens/login.css";
 @import "screens/friends.css";
+@import "screens/find.css";
+@import "screens/more.css";
+@import "screens/settings.css";
+@import "screens/chat.css";
 
 /* styles.css에는 모든 곳에 적용되는 것들을 넣기 때문에 이건 남아있다.
    편한 방법을 사용해도 상관 없음
@@ -49,4 +57,9 @@
 body {
   font-family: "Open Sans", sans-serif;
   color: #2e363e; /* 기본 색상을 완전 black에서 변경 */
+  height: 1000vh;
+}
+
+.main-screen {
+  padding: 0px var(--horizontal-space);
 }

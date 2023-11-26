@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="css/styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>More - Kokoa Clone</title>
+  </head>
+  <body>
+    <!-- Status bar -->
+    <div class="status-bar">
+      <div class="status-bar__column">
+        <span>No Service</span>
+        <i class="fas fa-wifi"></i>
+      </div>
+      <div class="status-bar__column">
+        <span>18:44</span>
+      </div>
+      <div class="status-bar__column">
+        <span>11%</span>
+        <i class="fas fa-battery-full"></i>
+        <i class="fas fa-bolt"></i>
+      </div>
+    </div>
+
+    <!-- Bottom navigation -->
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__btn">
+          <a class="nav__link" href="friends.html"
+            ><i class="far fa-user fa-2x"></i
+          ></a>
+        </li>
+        <li class="nav__btn">
+          <a class="nav__link" href="chats.html">
+            <span class="nav__notification badge"> 1 </span
+            ><i class="far fa-comment fa-2x"></i
+          ></a>
+        </li>
+        <li class="nav__btn">
+          <a class="nav__link" href="find.html">
+            <i class="fas fa-search fa-2x"></i>
+          </a>
+        </li>
+        <li class="nav__btn">
+          <a class="nav__link" href="more.html">
+            <div class="nav__alert alert"></div>
+            <i class="fas fa-ellipsis fa-2x"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Screen header -->
+    <header class="screen-header">
+      <h1 class="screen-header__title">More</h1>
+      <div class="screen-header__icons">
+        <div class="screen-header__icon">
+          <i class="fas fa-search fa-lg"></i>
+        </div>
+        <div class="screen-header__icon">
+          <i class="fas fa-music fa-lg"></i>
+        </div>
+        <div class="screen-header__icon">
+          <a href="settings.html">
+            <i class="fas fa-cog fa-lg"></i>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main screen -->
+    <!-- 두 개의 class를 갖게 됨
+         1. 전체 padding을 주기 위한 main-screen
+         2. user-component와 icon-row 사이 margin을 주기 위한 more-screen
+     -->
+    <main class="main-screen more-screen">
+      <!-- User component -->
+      <div class="user-component">
+        <div class="user-component__column">
+          <img
+            class="user-component__avatar user-component__avatar--xl"
+            src="https://avatars.githubusercontent.com/u/42177438?v=4"
+          />
+          <div class="user-component__text">
+            <h4 class="user-component__title">Joey</h4>
+            <div class="user-component__subtitle">
+              <div class="user-component__phone-number">
+                <h6>+1 787 666 999</h6>
+                <span>!</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="user-component__column">
+          <i class="far fa-comment-alt fa-2x"></i>
+        </div>
+      </div>
+
+      <!-- Icon row -->
+      <!-- user-component와 icon-row는 여러 화면에서 사용됨
+           둘 사이에 margin을 줄 떄 component를 수정하면 여러 화면에 영향을 미치므로 좋지 않다.
+           이럴 때는 이 화면에서만 사용될 screen css를 만들어서 쓰면 좋다.
+       -->
+      <div class="icon-row">
+        <div class="icon-row__icon">
+          <i class="far fa-calendar"></i>
+          <span>Calendar</span>
+        </div>
+        <div class="icon-row__icon">
+          <i class="far fa-smile-beam"></i>
+          <span>Emoticons</span>
+        </div>
+        <div class="icon-row__icon">
+          <i class="fas fa-paint-roller"></i>
+          <span>Themes</span>
+        </div>
+        <div class="icon-row__icon">
+          <i class="fas fa-file-invoice-dollar"></i>
+          <span>Account</span>
+        </div>
+      </div>
+
+      <!-- More suggestions -->
+      <div class="more-suggestions">
+        <h4 class="more-suggestions__title">Suggestions</h4>
+        <div class="more-suggestions__icons">
+          <div class="more-suggestions__icon">
+            <div class="more-suggestions__icon-image">
+              <i class="fas fa-quote-right"></i>
+            </div>
+            <span class="more-suggestions__icon-text">Kokoa Story</span>
+          </div>
+          <div class="more-suggestions__icon">
+            <div class="more-suggestions__icon-image">
+              <i class="fas fa-quote-right"></i>
+            </div>
+            <span class="more-suggestions__icon-text">Kokoa Story</span>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Script는 항상 body 제일 아래에 위치한다. -->
+    <script
+      src="https://kit.fontawesome.com/88341581a4.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

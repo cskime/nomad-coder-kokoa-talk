@@ -3,6 +3,7 @@
   justify-content: space-between;
   align-items: center;
   padding: var(--horizontal-space);
+  margin-bottom: 15px;
 }
 
 .screen-header__title {
@@ -10,6 +11,24 @@
   font-weight: 600;
 }
 
-.screen-header__icons span {
+.screen-header__icons {
+  display: flex;
+}
+
+/* screen-header icon에 alert dot을 추가하기 위해
+   1. div로 변경 -> inline에서 block으로 변경됨
+   2. `screen-header__icons`에서 `display: flex;` 설정 -> 가로로 배치
+   
+   Child인 `screen-header__icon-alert`이 absolute position을 갖도록
+   1. `position: relative;` 설정
+ */
+.screen-header__icon {
   margin-left: 25px;
+  position: relative;
+}
+
+.screen-header__icon-alert {
+  position: absolute;
+  top: -5px;
+  right: -5px;
 }

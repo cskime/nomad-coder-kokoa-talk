@@ -1,0 +1,39 @@
+.alt-header {
+  padding: var(--horizontal-space);
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.alt-header__title {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+/* 길이가 다른 세 column을 'Settings' Text를 정 가운데로 배치하며 펼치기
+   - auto : The browser selects a suitable margin to use. For example, in certain cases this value can be used to center an element. (from MDN document)
+   - 양쪽에 같은 크기의 아이콘이 하나씩 있다면 title이 정 가운데처럼 보이지만 미세하게 다르다...
+ */
+/* .alt-header__column:first-child {
+  margin-right: auto;
+}
+
+.alt-header__column:last-child {
+  margin-left: auto;
+} */
+
+.alt-header__column {
+  width: 33%;
+}
+.alt-header__column:nth-child(2) {
+  display: flex;
+  justify-content: center;
+}
+.alt-header__column:last-child {
+  display: flex;
+  justify-content: flex-end;
+}
+.alt-header__column span:last-child {
+  margin-left: 20px;
+}

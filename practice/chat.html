@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="css/styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat w/ Joey- Kokoa Clone</title>
+  </head>
+
+  <!-- Chat screen -->
+  <!-- 처음으로 전체 화면에 배경색이 들어감 -->
+  <body id="chat-screen">
+    <!-- Status bar -->
+    <div class="status-bar">
+      <div class="status-bar__column">
+        <span>No Service</span>
+        <i class="fas fa-wifi"></i>
+      </div>
+      <div class="status-bar__column">
+        <span>18:44</span>
+      </div>
+      <div class="status-bar__column">
+        <span>11%</span>
+        <i class="fas fa-battery-full"></i>
+        <i class="fas fa-bolt"></i>
+      </div>
+    </div>
+
+    <!-- Alternative header -->
+    <header class="alt-header">
+      <div class="alt-header__column">
+        <a href="chats.html">
+          <i class="fas fa-angle-left fa-2x"></i>
+        </a>
+      </div>
+      <div class="alt-header__column">
+        <h1 class="alt-header__title">Joey</h1>
+      </div>
+      <div class="alt-header__column">
+        <i class="fas fa-search fa-2x"></i>
+        <span><i class="fas fa-bars fa-2x"></i></span>
+      </div>
+    </header>
+
+    <!-- Main screen -->
+    <main class="main-screen main-chat">
+      <div class="chat__timestamp">Tuesday, June 30, 2020</div>
+      <div class="message-row">
+        <img src="https://avatars.githubusercontent.com/u/42177438?v=4" />
+        <div class="message-row__content">
+          <span class="message__author">Joey</span>
+          <div class="message__info">
+            <div class="message__bubble">Hi!</div>
+            <div class="message__time">21:37</div>
+          </div>
+        </div>
+        <div class="message-row__content"></div>
+      </div>
+      <!-- modifier를 사용해서 income message row를 구현한다. 
+           - Row의 특성은 모두 사용하면서 (from message-row)
+           - 나한테 온 message에 일부 다른 속성을 적용한다. (from message-row--own)
+
+           즉, 재사용할 수 있는 것들은 최대한 살리면서 꼭 필요한 부분만 바꾸려는 시도
+    -->
+      <div class="message-row message-row--own">
+        <div class="message-row__content">
+          <div class="message__info">
+            <div class="message__bubble">Hi nice to meet you!</div>
+            <div class="message__time">21:37</div>
+          </div>
+        </div>
+        <div class="message-row__content"></div>
+      </div>
+    </main>
+
+    <!-- Input -->
+    <form class="reply">
+      <div class="reply__column">
+        <i class="far fa-plus-square fa-lg"></i>
+      </div>
+      <div class="reply__column">
+        <input type="text" placeholder="Write a message..." />
+        <i class="far fa-smile-wink fa-lg"></i>
+        <button>
+          <i class="fas fa-arrow-up"></i>
+        </button>
+      </div>
+    </form>
+
+    <!-- Script는 항상 body 제일 아래에 위치한다. -->
+    <script
+      src="https://kit.fontawesome.com/88341581a4.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

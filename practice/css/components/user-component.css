@@ -10,6 +10,11 @@
 
 .user-component__column:last-child {
   color: rgba(0, 0, 0, 0.5);
+
+  /* chats에서 오른쪽 시간 및 badge를 오른쪽 정렬시키기 위해 flexbox로 설정 */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 /* [ class로 옵션 주기 ]
@@ -50,4 +55,30 @@
   margin-top: 8px;
   color: rgba(0, 0, 0, 0.5);
   font-size: 17px;
+}
+
+.user-component__time {
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* user-component__phone-number */
+.user-component__phone-number {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+.user-component__phone-number span:last-child {
+  border: 2px solid tomato;
+  border-radius: 50%;
+  color: tomato;
+  font-weight: 600;
+  margin-left: 5px;
+  padding: 2px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 8px;
+  height: 8px;
 }
