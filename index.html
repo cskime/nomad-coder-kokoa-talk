@@ -29,7 +29,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="sources/css/styles.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome to Kokoa Clone</title>
@@ -75,10 +75,10 @@
               - **username, password 같은 민감한 정보를 넣으면 안된다.**
          
          아래와 같이 보낼 때 이동한 페이지의 URL
-         file:///Users/ckim/Developer/Nomad/nomad-coder-kokoa-talk/practice/friends.html?username=&password=&submit=Log+In
+         {ROOT_PATH}friends.html?username=&password=&submit=Log+In
          - 
      -->
-    <form id="login-form" action="friends.html" method="get">
+    <form id="login-form" action="sources/friends.html" method="get">
       <input name="username" type="text" placeholder="Email or phone number" />
       <input name="password" type="password" placeholder="Password" />
       <input name="submit" type="submit" value="Log In" />
