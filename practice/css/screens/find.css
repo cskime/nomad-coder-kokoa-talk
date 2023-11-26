@@ -91,3 +91,37 @@
 .open-post__heart-count span {
   margin-left: 3px;
 }
+
+/* Heart icon에 적용하기 */
+
+@keyframes heartBeat {
+  0% {
+    color: white;
+    transform: none;
+  }
+  50% {
+    color: tomato;
+    transform: scale(1.5);
+  }
+  100% {
+    color: white;
+    transform: none;
+  }
+}
+
+/* open-post__heart-count가 hover state일 떄 그 안에 있는 icon에 적용함 */
+.open-post__heart-count:hover i {
+  /* - scale에 너무 작은 값을 사용하면 문제가 생길 수 있음
+     - 여기서는 animation이 떨리는 것 처럼 보임
+     - will-change property를 사용하면 브라우저에 어떤 것이 바뀔지 알려줄 수 있다.
+
+     [ will-change ]
+     - Provides a rendering hint to the user agent(browser),
+     - starting what kinds of changes the author expects to perform onthe element.
+
+     여기서는 `transform` property가 animation으로 변경될 예정이므로 
+     `transform`에 적용한다.
+  */
+  will-change: transform;
+  animation: heartBeat 1s linear infinite;
+}

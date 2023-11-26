@@ -1,0 +1,30 @@
+#no-mobile {
+  position: absolute;
+  z-index: 99;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--yellow);
+  display: flex;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+}
+
+/* Width가 Max Width인 645px보다 작다면 no-mobile을 보여주지 않음(display: none) */
+@media screen and (max-width: 645px) {
+  #no-mobile {
+    display: none;
+  }
+}
+
+/* Chat에서는 scroll 때문에 100vh를 적용하면 스크롤 아래로 content를 볼 수 있음
+   Width가 645px보다 커질 때 body 크기를 강제로 화면에 딱 맞게 만들어서 scroll을 없앤다.
+ */
+@media screen and (min-width: 645px) {
+  body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+}

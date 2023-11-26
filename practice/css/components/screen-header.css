@@ -32,3 +32,18 @@
   top: -5px;
   right: -5px;
 }
+
+/* screen-header에 있는 cog icon에만 적용한다. */
+
+@keyframes rotateCog {
+  from {
+    transform: none;
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+.screen-header__icons .fa-cog:hover {
+  animation: rotateCog 3s linear infinite;
+}

@@ -1,0 +1,19 @@
+#no-portrait {
+  position: fixed;
+  z-index: 99;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  background-color: var(--yellow);
+  font-size: 32px;
+}
+
+/* Portrait일 때는 no-portrait을 보여주지 않음 */
+@media screen and (orientation: portrait) {
+  #no-portrait {
+    display: none;
+  }
+}

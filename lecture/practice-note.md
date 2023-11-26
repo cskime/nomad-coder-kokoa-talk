@@ -146,3 +146,56 @@ content width가 100px만큼 늘어나서 화면 밖으로 나가버린다.
 
 - `!` : HTML form 자동완성
 - `link:css` : HTML에 css file를 연결하는 `<link>` tag 추가 (with stylesheet)
+
+## Flex order
+
+- `order` : Flexbox가 element들을 배치하는 순서
+- Flexbox 안에 들어가는 element들의 order를 변경해서 배치되는 순서를 조작할 수 있다.
+- Flex children에만 사용할 수 있다.
+- 단순히 '좌->우' 순서를 '우->좌'로 바꾸려고 한다면, order를 조절하지 않고 `justify-content`를 `row-reverse`로 설정해도 된다.
+
+```css
+.message-row--own message__bubble {
+  order: 1;
+}
+.message-row--own message__time {
+  order: 0;
+}
+```
+
+## z-index
+
+- Screen에 표시되는 element들의 z axis 방향 순서
+- 'Layer'라고도 부른다.
+- 화면 맨 앞에 나와 있을수록 `z-index`가 높고, `z-index`를 높게 설정할수록 해당 element가 화면 앞으로 배치되어 다른 element들을 덮어쓴다.
+
+## will-change
+
+- 브라우저에게 어떤 property가 변경될 것인지 미리 알려줘서 해당 property를 변경하는 작업에 GPU 자원을 더 사용해서 연산 성능을 높임
+- `scale()` transform을 사용할 때, scale 값이 너무 작으면 animation이 정상적으로 동작하지 않는 문제가 있었음
+- `will-change: transform;` def를 추가하면 transform이 동작할 때 문제를 해결할 수 있다.
+
+## Animation forwards, delay
+
+- `forwards`
+  - Animation 실행이 종료되면, 해당 element는 최초 상태로 되돌아감
+  - `animation`에 `forwards` 값을 추가하면 key frame이 종료된 후 마지막 속성값을 유지시킨다.
+- `animation-delay` : animation이 실행되는 시간을 지연시키는 property
+
+```css
+@keyframes hideSplashScreen {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+#splash-screen {
+  animation: hideSplashScreen 0.25s linear forwards;
+}
+```
+
+- Animation이 종료되면 `#splash-screen`의 `opacity`는 다시 1로 돌아갈 것
+- `forwards` 값을 추가함으로써 animation 종료 후 계속 `opacity` 값을 0으로 유지한다.
