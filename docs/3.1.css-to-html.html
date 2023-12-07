@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>The Nico Times</title>
+
+    <!-- [ CSS를 추가하는 방법 ] 
+         1. HTML file에 CSS를 직접 입력하는 방법
+            - <head>에 <style> tag를 만들고 그 안에 CSS 작성
+         2. HTML과 CSS 파일 분리
+            - <head>에 <link> tag로 css file 연결
+            - <link rel="stylesheet" href="styles.css" />
+                - rel : relationship. HTML document와의 관계
+                - href : link, URL
+         - CSS file을 HTML과 분리하면 더 많은 곳에서 재사용할 수 있으므로 더 좋은 방법이다.
+     -->
+    <style>
+      /*  [ CSS를 작성하는 규칙 ]
+            1. CSS는 HTML tag를 가리키는 일을 한다.
+                - selector : CSS가 HTML element를 가리키는 것
+                - selector 사용 방법
+                    1. tag 이름을 직접 입력
+            2. 가리킨 HTML tag의 style을 설정한다.
+                - property : 색상, font size 등 해당 element의 속성
+            3. CSS는 위에서부터 차례대로 적용된다.
+                - Cascading : 계단식, 차례대로 진행되는 것
+                - 동일한 selector에 대해 같은 property의 값을 여러 번 다르게 설정할 수 있음
+                - 이 때, 가장 마지막에 설정한 값이 최종적으로 적용된다.
+         */
+      /* h1 {
+        font-size: 50px;
+      }
+      h1 {
+        color: yellowgreen;
+      } */
+      h1 {
+        /*  - font-size는 가장 마지막에 설정한 40px로 적용된다.
+            - 같은 selector의 property들은 한 곳에 모아서 작성
+         */
+        font-size: 40px;
+        color: yellowgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>The Nico Times</h1>
+    </header>
+    <main>
+      <address>123 Road Altavista</address>
+    </main>
+    <footer>&copy; ckim joey</footer>
+  </body>
+</html>

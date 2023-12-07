@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 20px;
+      }
+
+      /* [ Inline block ]
+         - <div>는 기본값이 `block`
+         - `inline`으로 설정하면 width/height을 가지지 않으므로 화면에 보이지 않음
+         - `inline-block`
+            - width, height, full margin을 가지면서도 (like block)
+            - 가로로 배치할 수도 있음 (like inline)
+
+         [ Inline block을 사용하지 않는 이유 ]
+         - 우리가 만들지 않았는데도 요소 사이에 공백이 생김
+         - 정해진 형식이 없어서 요소 크기가 달라짐에 따라 사이 공백 너비도 달라짐 (with no rules)
+         - 화면 크기가 변경됨에 따라 요소를 동적으로 배치하기 어려움
+            - 화면 크기로부터 각 요소의 위치나 사이 너비를 일일이 계산해야 함
+            - 화면 크기에 따라 반응형 디자인을 만들기 어려움
+      */
+      div {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        background-color: teal;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <div></div>
+    <div></div>
+  </body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>The Nico Times</title>
+    <style>
+      html {
+        background-color: tomato;
+      }
+
+      body {
+        background-color: thistle;
+
+        /*  [ Margin / Padding ] 
+            - margin : box의 border 바깥쪽 영역 (body는 브라우저에 의해 기본 margin을 가짐 (8px))
+            - padding : box의 border 안쪽 영역
+            - padding은 block/inline 모두 적용할 수 있다.
+            - inline은 width/height이 없으므로 vertical margin을 가질 수 없다.
+
+            [ 값 설정 방법 ]
+            body {
+                // 1. {property}-top/left/right/bottom 각각 설정
+                margin-top: 10px;
+                margin-left: 20px;
+                margin-bottom: 15px;
+                margin-right: 5px;
+
+                // 2. {property}에 vertical/horizontal 값 설정
+                margin: 10px 20px;
+
+                // 3. {property}에 top/right/bottom/left 순서대로 값 설정
+                margin: 10px 5px 15px 20px;
+            }
+      */
+        margin: 20px 5px 12px 10px;
+        padding: 20px;
+      }
+
+      /*  [ Border ]
+          - border: thickness style color;
+          - border-style : border style만 설정
+            - 다양한 종류의 border가 있음
+            - 대부분 못생겨서 한가지만 쓴다.. (solid, or dotted? dashed?)
+          - border-width : 두께만 설정
+          - border-radius : 각 모서리 round 처리
+          - inline에도 적용된다. (e.g. span)
+
+          [ * ]
+          - * : 모든 element를 선택하는 selector
+      */
+      * {
+        border: 2px solid black;
+      }
+
+      div {
+        /*  [ Collapsing margins ]
+            - 내부 box의 경계가 외부 box의 경계와 같다면, 두 margin이 하나로 취급되는 현상
+            - 아래 예시에서 div의 top margin을 50px로 설정하면 body도 top margin을 80px로 갖게됨
+            - vertical margin에서만 발생
+        */
+        margin: 50px 15px;
+        height: 150px;
+        width: 150px;
+        background-color: whitesmoke;
+      }
+
+      /*  [ Element Selector ]
+          - tag : HTML에서 해당 tag와 일치하는 모든 요소를 선택
+          - id : #{id}로 특정 id를 가진 element 1개 선택
+
+          [ Cascading ]
+          - div에서 width, height 설정
+          - 다른 id를 갖는 모든 div element들이 해당 size를 공유하게 됨
+      */
+      #first {
+        background-color: whitesmoke;
+        height: 150px;
+        width: 150px;
+      }
+
+      #second {
+        background-color: teal;
+        height: 100px;
+        width: 100px;
+      }
+
+      #third {
+        background-color: wheat;
+        height: 50px;
+        width: 50px;
+      }
+
+      #fourth {
+        background-color: blanchedalmond;
+        height: 25px;
+        width: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- - 브라우저는 자체적으로 element들에 style을 부여함
+         - 브라우저가 부여한 속성들은 insepctor에서 `user agent stylesheet`로 표시됨
+    -->
+    <div></div>
+    <div id="first">
+      <div id="second">
+        <div id="third">
+          <div id="fourth">
+            <span>hello!</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

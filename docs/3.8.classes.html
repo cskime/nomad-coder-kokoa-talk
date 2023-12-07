@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 20px;
+      }
+
+      /* [ Class Selector ]
+         - #{name} : #을 사용해서 id로 element 선택
+         - .{name} : 점(.)을 사용해서 class로 여러 element 선택
+      */
+      .btn {
+        padding: 5px 10px;
+        border-radius: 5px;
+      }
+      .tomato {
+        background-color: tomato;
+        color: white;
+      }
+      .teal {
+        background-color: teal;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- [ Class ]
+         - id는 unique 값이므로 여러 element에 적용할 수 없음
+         - id를 사용하면 여러 element에 같은 속성을 적용하기 위해 같은 코드를 반복해야 함
+         - class는 요소를 가리키면서도, 다른 요소들 간에 공유할 수 있다.
+           <span class="tomato">1</span>
+           <span class="tomato">2</span>
+         - element는 class를 여러 개 가질 수 있다.
+           <span class="tomato hello honey potato">hello</span>
+     -->
+    <span class="btn teal">hello</span>
+    <span class="btn tomato">hello</span>
+    <span class="btn teal">hello</span>
+    <span class="btn tomato">hello</span>
+    <span class="btn teal">hello</span>
+    <span class="btn tomato">hello</span>
+    <span class="btn teal">hello</span>
+  </body>
+</html>
