@@ -1,6 +1,10 @@
-# Nomad coder kokoa talk
+# Nomad Coder Kokoa Talk Clone
 
-- This is my study note for the kokoa talk clone lecture in nomad coder.
-- I'm going to learn HTML & CSS fundamentals and publish very simple website only using HTML & CSS.
-- Some notes are written very freely.
-- For others in CSS part, i tried to arrange the concepts with real html code to review easily later.
+- I took the KokoaTalk clone lecture at the [Nomadcoders](https://nomadcoders.co/).
+- [Go to the lecture](https://nomadcoders.co/kokoa-clone)
+- [Go to the project demo](https://cskime.github.io/nomad-coder-kokoa-talk/)
+
+## Skills
+
+- HTML
+- CSS (fundamentals, flexbox layout, animations)
